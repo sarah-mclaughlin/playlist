@@ -6,7 +6,7 @@ class AddBook extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      name: '',
+      title: '',
       genre: '',
       authorId: ''
     }
@@ -26,7 +26,7 @@ class AddBook extends Component {
     // use the addBookMutation
     this.props.addBookMutation({
       variables: {
-        name: this.state.name,
+        title: this.state.title,
         genre: this.state.genre,
         authorId: this.state.authorId
       },
@@ -37,8 +37,8 @@ class AddBook extends Component {
     return (
       <form id="add-book" onSubmit={ this.submitForm.bind(this) } >
         <div className="field">
-          <label>Book name:</label>
-          <input type="text" onChange={ (e) => this.setState({name: e.target.value}) } />
+          <label>Title:</label>
+          <input type="text" onChange={ (e) => this.setState({title: e.target.value}) } />
         </div>
         <div className="field">
           <label>Genre:</label>

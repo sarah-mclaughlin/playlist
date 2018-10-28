@@ -7,3 +7,10 @@ const authorSchema = new Schema({
 })
 
 module.exports = mongoose.model('Author', authorSchema)
+
+
+// var authorSchema = new Schema({
+//   name: String,
+//   age: Number,
+//   books: [{ type: Schema.Types.ObjectId, ref: 'Book' }],
+// })

@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 import ApolloClient from 'apollo-boost'
 import {ApolloProvider} from 'react-apollo'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 // components
-import BookList from './components/BookList'
-import AddBook from './components/AddBook'
+import Home from './components/Home'
+import CarList from './components/CarList'
 
 // apollo client setup
 const client = new ApolloClient({
@@ -14,13 +15,14 @@ const client = new ApolloClient({
 class App extends Component {
   render () {
     return (
-      <ApolloProvider client={client}>
-        <div id="main">
-          <h1>Ninja's Reading List</h1>
-          <BookList />
-          <AddBook />
-        </div>
-      </ApolloProvider>
+      <Router>
+          <ApolloProvider client={client}>
+            <div className='app'>
+              <Route exact path='/' component={Home} />
+              <Route path='/cars' component={CarList} />
+            </div>
+          </ApolloProvider>
+      </Router>
     )
   }
 }

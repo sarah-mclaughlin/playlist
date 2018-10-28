@@ -8,3 +8,9 @@ const bookSchema = new Schema({
 })
 
 module.exports = mongoose.model('Book', bookSchema)
+
+// var bookSchema = new Schema({
+//   title: String,
+//   genre: String,
+//   authorId: { type: Schema.Types.ObjectId, ref: 'Author' },
+// })
